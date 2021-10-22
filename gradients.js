@@ -16,8 +16,8 @@ function rgbToHex(r, g, b) {
 }
 
 function gradient(color_a, color_b, value) {
-  if (color_a instanceof String) {color_a = hexToRgb(color_a)};
-  if (color_b instanceof String) {color_b = hexToRgb(color_b)};
+  if (typeof color_a === "string") {color_a = hexToRgb(color_a)};
+  if (typeof color_b === "string") {color_b = hexToRgb(color_b)};
   value = clamp(0, 1, value);
   return rgbToHex(
     lerp(color_a.r, color_b.r, value),
